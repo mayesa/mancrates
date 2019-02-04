@@ -1,0 +1,7 @@
+<%= render partial: "search_form", locals: { form: @search_form, order_statuses: @order_statuses } %>
+<h1>Orders (<%= @total_orders %>)</h1>
+<% if @orders.present? %>
+  <%= render partial: "orders", locals: { orders: @orders } %>
+<% else %>
+  <p>No orders found.</p>
+<% end %>

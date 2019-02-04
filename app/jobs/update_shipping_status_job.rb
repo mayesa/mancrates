@@ -1,7 +1,7 @@
-class UpdateShippingStatusJob < ActiveJob::Base
+class UpdateShippingStatusJob < ApplicationJob
   queue_as :default
 
   def perform
-    # IMPLEMENT ME
+    Orders::UpdateShippingStatusService.call
   end
 end

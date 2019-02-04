@@ -1,3 +1,5 @@
 class Product < ActiveRecord::Base
-  STATUS = ['processing'].concat(Fedex::STATUS).freeze
+  validates :name, :price, :stock, presence: true
+
+  scope :available, -> { where('stock > 0') }
 end

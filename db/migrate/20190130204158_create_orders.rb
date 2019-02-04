@@ -6,7 +6,9 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :adress
       t.string :zip_code
       t.string :shipping_method
-
+      t.string :aasm_state
+      t.string :fedex_id
+      t.datetime :fedex_status_checked_at
       t.timestamps
     end
   end

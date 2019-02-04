@@ -23,7 +23,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'rspec-activejob'
+  gem 'factory_bot_rails'
 end
+
+gem 'devise'
+gem 'aasm'
+gem 'bootstrap'
+gem 'rails-i18n', '~> 5.1'
+gem 'faker'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -40,4 +49,6 @@ group :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
 end

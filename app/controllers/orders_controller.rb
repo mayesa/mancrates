@@ -44,6 +44,6 @@ class OrdersController < ApplicationController
   end
 
   def search_params
-    params.require(:order_search_form).permit(:order_id, :from, :to, statuses: [])
+    params.require(:order_search_form).permit(:order_id, :from, :to, statuses: []) if params[:order_search_form].present?
   end
 end

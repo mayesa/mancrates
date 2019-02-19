@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   def index
     @search_form = OrderSearchForm.new(search_params)
     @orders = Orders::SearchService.build(current_user).call(@search_form)
-    @order_statuses = Order.aasm.states.map(&:name)
     @total_orders = @orders.count
   end
 
@@ -19,12 +18,10 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.valid?
         format.html { redirect_to orders_url, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
       else
         set_available_products
         set_shipping_methods
         format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end

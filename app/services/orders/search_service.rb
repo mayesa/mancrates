@@ -1,16 +1,4 @@
-require 'ostruct'
-
-class Orders::SearchService
-  attr_accessor :current_user
-
-  def self.build(current_user)
-    new(current_user)
-  end
-
-  def initialize(current_user)
-    self.current_user = current_user
-  end
-
+class Orders::SearchService < ApplicationService
   def call(search_form)
     orders = Order.all
     if search_form.filled?

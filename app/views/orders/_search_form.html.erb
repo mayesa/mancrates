@@ -2,7 +2,7 @@
   <%= f.text_field :order_id, placeholder: "Enter Order Id Digits" %>
   <%= f.text_field :from, placeholder: "From: mm/dd/yy" %>
   <%= f.text_field :to, placeholder: "To: mm/dd/yy" %>
-  <% order_statuses.each do |order| %>
+  <% form.order_statuses.each do |order| %>
   <%= f.check_box :statuses, { multiple: true }, order, false %>
     <%= f.label order %>
   <% end %>
